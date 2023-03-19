@@ -16,11 +16,15 @@
 
 package com.example.android.diceroller
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +36,12 @@ class MainActivity : AppCompatActivity() {
 
         // TODO (04) Show a Toast when the OnClickListener is called
 
-    }
+        val rollButton: Button = findViewById(R.id.roll_button)
+        rollButton.setOnClickListener {
+            Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
 
+
+        }
+
+    }
 }
